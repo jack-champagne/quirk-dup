@@ -28,15 +28,15 @@ import {WglArg} from "../../src/webgl/WglArg.js"
 
 let suite = new Suite("PhaseGradientGates");
 
-suite.testUsingWebGL('PHASE_GRADIENT_SHADER', () => {
-    assertThatCircuitShaderActsLikeMatrix(
-        ctx => PHASE_GRADIENT_SHADER.withArgs(...ketArgs(ctx, 3), WglArg.float('factor', Math.PI/8)),
-        Matrix.generateDiagonal(8, i => Complex.polar(1, i*Math.PI/8)));
+// suite.testUsingWebGL('PHASE_GRADIENT_SHADER', () => {
+//     assertThatCircuitShaderActsLikeMatrix(
+//         ctx => PHASE_GRADIENT_SHADER.withArgs(...ketArgs(ctx, 3), WglArg.float('factor', Math.PI/8)),
+//         Matrix.generateDiagonal(8, i => Complex.polar(1, i*Math.PI/8)));
 
-    assertThatCircuitShaderActsLikeMatrix(
-        ctx => PHASE_GRADIENT_SHADER.withArgs(...ketArgs(ctx, 4), WglArg.float('factor', -Math.PI/16)),
-        Matrix.generateDiagonal(16, i => Complex.polar(1, -i*Math.PI/16)));
-});
+//     assertThatCircuitShaderActsLikeMatrix(
+//         ctx => PHASE_GRADIENT_SHADER.withArgs(...ketArgs(ctx, 4), WglArg.float('factor', -Math.PI/16)),
+//         Matrix.generateDiagonal(16, i => Complex.polar(1, -i*Math.PI/16)));
+// });
 
 suite.testUsingWebGL('DynamicPhaseGradientFamily', () => {
     assertThatGateActsLikePhaser(

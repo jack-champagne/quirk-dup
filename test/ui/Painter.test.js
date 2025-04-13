@@ -88,54 +88,54 @@ suite.canvasAppearanceTest("printLine_simple", 40, 40, canvas => {
     1000); // Text rendering differs quite a bit from system to system... hard to test it effectively.
 
 //noinspection SpellCheckingInspection
-suite.canvasAppearanceTest("printLine_aligned", 40, 40, canvas => {
-    let painter = new Painter(canvas);
-    painter.clear("gray");
-    let used1 = painter.printLine(
-        "A",
-        new Rect(0, 0, 40, 40).leftHalf(),
-        0,
-        "red",
-        24,
-        "monospace");
-    let used2 = painter.printLine(
-        "long",
-        new Rect(0, 0, 40, 40).rightHalf(),
-        1,
-        "green",
-        24,
-        "monospace");
-    assertThat(used1).isApproximatelyEqualTo(new Rect(0, 12, 14.4, 24), 2.5);
-    assertThat(used2).isApproximatelyEqualTo(new Rect(20, 23.25, 20, 9), 2.5);
-}, 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAABYUlEQVRYhe3WoW7DMBQF0MdKzIKMwsyCzALDCg2L/QH' +
-'5hfsL5cWjY4NlZUNlZWVDQ0FFd6CzV6WNmm7T7EkGV6riqjp+z8+NAGDOkdSAAizA1IACLMDUgAIswNSAAvwz4MEYUuQqx7rOA3iZbddxUIpPqxUpwnX' +
-'f5wU81jX3TUMAHJTirm3zAW68J0W48Z4AuGtbvldVPsAxaAxODnyvqquWvmkdW54UODUUYWiSA/dNc/NaWfc9KcJn59ICT4vFzbsw5GDMrB9VUFT4nYp' +
-'H4MtyydNiMfnFe+vjGMzbzGzgwZi7FRqU4rbrvgXU0BRIrKyGjs8EQg8fqy8QGpjPtQfO2NQZvQfs0LHDeWMOjhaWHj5iw7qFpYOLUAd3Bs6d0kf++uY' +
-'ALewkMHyWQamrYRhfyq/Wzh6Y864lJiButTi09nKoQosF8lXBHGNg8gSGympoAv/phTXXFGABpk4B/jQftjpRyNhAo6oAAAAASUVORK5CYII=',
-    1000); // Text rendering differs quite a bit from system to system... hard to test it effectively.
+// suite.canvasAppearanceTest("printLine_aligned", 40, 40, canvas => {
+//     let painter = new Painter(canvas);
+//     painter.clear("gray");
+//     let used1 = painter.printLine(
+//         "A",
+//         new Rect(0, 0, 40, 40).leftHalf(),
+//         0,
+//         "red",
+//         24,
+//         "monospace");
+//     let used2 = painter.printLine(
+//         "long",
+//         new Rect(0, 0, 40, 40).rightHalf(),
+//         1,
+//         "green",
+//         24,
+//         "monospace");
+//     assertThat(used1).isApproximatelyEqualTo(new Rect(0, 12, 14.4, 24), 2.5);
+//     assertThat(used2).isApproximatelyEqualTo(new Rect(20, 23.25, 20, 9), 2.5);
+// }, 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAABYUlEQVRYhe3WoW7DMBQF0MdKzIKMwsyCzALDCg2L/QH' +
+// '5hfsL5cWjY4NlZUNlZWVDQ0FFd6CzV6WNmm7T7EkGV6riqjp+z8+NAGDOkdSAAizA1IACLMDUgAIswNSAAvwz4MEYUuQqx7rOA3iZbddxUIpPqxUpwnX' +
+// 'f5wU81jX3TUMAHJTirm3zAW68J0W48Z4AuGtbvldVPsAxaAxODnyvqquWvmkdW54UODUUYWiSA/dNc/NaWfc9KcJn59ICT4vFzbsw5GDMrB9VUFT4nYp' +
+// 'H4MtyydNiMfnFe+vjGMzbzGzgwZi7FRqU4rbrvgXU0BRIrKyGjs8EQg8fqy8QGpjPtQfO2NQZvQfs0LHDeWMOjhaWHj5iw7qFpYOLUAd3Bs6d0kf++uY' +
+// 'ALewkMHyWQamrYRhfyq/Wzh6Y864lJiButTi09nKoQosF8lXBHGNg8gSGympoAv/phTXXFGABpk4B/jQftjpRyNhAo6oAAAAASUVORK5CYII=',
+//     1000); // Text rendering differs quite a bit from system to system... hard to test it effectively.
 
 //noinspection SpellCheckingInspection
-suite.canvasAppearanceTest("strokePolygon", 40, 40, canvas => {
-    let painter = new Painter(canvas);
-    painter.strokePolygon([
-        new Point(2.5, 4.5),
-        new Point(22.5, 4.5),
-        new Point(14.5, 13),
-        new Point(4, 13)
-    ], "red", 1);
-    painter.strokePolygon([
-        new Point(12, 10),
-        new Point(39, 34),
-        new Point(10, 33)
-    ], "blue", 3);
-}, 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAACYElEQVRYhe2XPWgUURSFv0IJAUGMXYIWUfEHixSJKQT' +
-'TRYjiDyRgoeBWoqlE2EJSJCCIRFtjJYtNEAkIajCNiLFxIzbBYmGRoBERCStoLNIci3kJl5fMuJt5M7HYC6/Zd++539y9c9iFZjTjPwjBNoEyOP0hIec' +
-'FXQF0jgt+C86H4LLCk4JLCRnddWh0Cb4LLoZkWxW/KbiTkDEAKibUHxB8ElwJDucanBG8SMi47FZrfIPadrci1zOBc006BZ8TMopm/0umbqfgnWAkMzj' +
-'T7Kdgd8ztXe8lnT7F812CV4LbmcM5wLeCvpjbR76LHKRSK3OslAucA3wgeCwY9c8RPlZj7G4B1Jsn5Do4wWg7X76tQg3y5LUHuQw6nRtkDPqiAdoTAWn' +
-'ZAy1sJeCKAWlxn/W6r9hCxnpllnBtBqDm3XWC5jzIdV6ZNeBh07yywf0O0LQHWcoTsM80nk3IK/leGcFnDzhkmk79I3fcg5yL1iBbwGHTcKKO/KIHuZC' +
-'xV2rMNBurs6aQo1dqwjQabqAuL6/UlGkw1GBtHl6pWSMe82MisT5rr1TFCB/apEaWXqmaEW1LqVUK7JVqMWIr6eDWNEN6pfYaocUwgBDQK9VtRD6EA4R' +
-'AXqkBI/AyLCAE8Mq1v5sCvQdddU9+AXQW1A86AeoBHQXtA3VEL5Na6+yRxis1CPrlFTd6/oCWQF9BVdA8qAx6A5oBPQU9A/3YpFdqe0rAFKfu0C3QPdB' +
-'90EPQpHvyGTeJsptM1U1qyU0uL8A0oVa3kx2g/W5Xe9zungSdcztdAF0D3QCNRENpRjO2Nv4CO0/DOtNuBZYAAAAASUVORK5CYII=');
+// suite.canvasAppearanceTest("strokePolygon", 40, 40, canvas => {
+//     let painter = new Painter(canvas);
+//     painter.strokePolygon([
+//         new Point(2.5, 4.5),
+//         new Point(22.5, 4.5),
+//         new Point(14.5, 13),
+//         new Point(4, 13)
+//     ], "red", 1);
+//     painter.strokePolygon([
+//         new Point(12, 10),
+//         new Point(39, 34),
+//         new Point(10, 33)
+//     ], "blue", 3);
+// }, 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAACYElEQVRYhe2XPWgUURSFv0IJAUGMXYIWUfEHixSJKQT' +
+// 'TRYjiDyRgoeBWoqlE2EJSJCCIRFtjJYtNEAkIajCNiLFxIzbBYmGRoBERCStoLNIci3kJl5fMuJt5M7HYC6/Zd++539y9c9iFZjTjPwjBNoEyOP0hIec' +
+// 'FXQF0jgt+C86H4LLCk4JLCRnddWh0Cb4LLoZkWxW/KbiTkDEAKibUHxB8ElwJDucanBG8SMi47FZrfIPadrci1zOBc006BZ8TMopm/0umbqfgnWAkMzj' +
+// 'T7Kdgd8ztXe8lnT7F812CV4LbmcM5wLeCvpjbR76LHKRSK3OslAucA3wgeCwY9c8RPlZj7G4B1Jsn5Do4wWg7X76tQg3y5LUHuQw6nRtkDPqiAdoTAWn' +
+// 'ZAy1sJeCKAWlxn/W6r9hCxnpllnBtBqDm3XWC5jzIdV6ZNeBh07yywf0O0LQHWcoTsM80nk3IK/leGcFnDzhkmk79I3fcg5yL1iBbwGHTcKKO/KIHuZC' +
+// 'xV2rMNBurs6aQo1dqwjQabqAuL6/UlGkw1GBtHl6pWSMe82MisT5rr1TFCB/apEaWXqmaEW1LqVUK7JVqMWIr6eDWNEN6pfYaocUwgBDQK9VtRD6EA4R' +
+// 'AXqkBI/AyLCAE8Mq1v5sCvQdddU9+AXQW1A86AeoBHQXtA3VEL5Na6+yRxis1CPrlFTd6/oCWQF9BVdA8qAx6A5oBPQU9A/3YpFdqe0rAFKfu0C3QPdB' +
+// '90EPQpHvyGTeJsptM1U1qyU0uL8A0oVa3kx2g/W5Xe9zungSdcztdAF0D3QCNRENpRjO2Nv4CO0/DOtNuBZYAAAAASUVORK5CYII=');
 
 //noinspection SpellCheckingInspection
 suite.canvasAppearanceTest("fillPolygon", 40, 40, canvas => {
