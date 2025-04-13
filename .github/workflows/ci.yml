@@ -29,7 +29,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: 12.x
+        node-version: 18.x
     - run: npm install
     - run: grunt build-test-page
     - run: node PuppeteerRunTests.js
@@ -44,7 +44,7 @@ jobs:
     - run: |
         npm install
         npm run build
-        node PuppeteerScreenshotCircuit.js --no-sandbox
+        node PuppeteerScreenshotCircuit.js
     - uses: actions/upload-artifact@v4
       with:
         name: screenshot
