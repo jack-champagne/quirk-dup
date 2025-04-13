@@ -2,7 +2,7 @@ name: Publish to GitHub Pages
 
 on:
   push:
-    # branches-ignore: [$default-branch]
+    branches: [$default-branch]
     paths-ignore:
       - '.devcontainer/**'
       - '.vscode/**'
