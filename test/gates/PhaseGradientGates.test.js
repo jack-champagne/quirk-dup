@@ -27,7 +27,7 @@ import {ketArgs} from "../../src/circuit/KetShaderUtil.js"
 import {WglArg} from "../../src/webgl/WglArg.js"
 
 let suite = new Suite("PhaseGradientGates");
-`
+
 // suite.testUsingWebGL('PHASE_GRADIENT_SHADER', () => {
 //     assertThatCircuitShaderActsLikeMatrix(
 //         ctx => PHASE_GRADIENT_SHADER.withArgs(...ketArgs(ctx, 3), WglArg.float('factor', Math.PI/8)),
