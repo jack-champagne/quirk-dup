@@ -1,8 +1,9 @@
 name: Publish to GitHub Pages
 
 on:
-  push:
-    branches: [$default-branch]
+  pull_request:
+    branches:
+      - main
     paths-ignore:
       - '.devcontainer/**'
       - '.vscode/**'
