@@ -1,7 +1,9 @@
+import {Config} from "../Config.js"
+
 function handleSpeedChange(e) {
     const chosenExp = Number(e.target.value) / 2;
     const chosenSpeed = Math.pow(2, chosenExp) * 1000;
-    $traceurRuntime.getModule("src/Config.js").Config.CYCLE_DURATION_MS = chosenSpeed;
+    Config.CYCLE_DURATION_MS = chosenSpeed;
 }
 
 /**
