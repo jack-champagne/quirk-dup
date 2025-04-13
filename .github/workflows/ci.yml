@@ -2,36 +2,51 @@ name: ci
 
 on:
   push:
-    branches: [$default-branch]
+    branches:
+      - main
   pull_request:
-    branches: [$default-branch]
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-
-  build-and-run-unit-tests:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: 12.x
+        node-version: 18.x
     - run: |
         npm install
+        npm run build
         grunt build-test-page
-        node PuppeteerRunTests.js
 
-  screenshot-circuit:
+  build-and-run-unit-tests:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: 12.x
+        node-version: 18.x
+    - run: npm install
+    - run: grunt build-test-page
+    - run: node PuppeteerRunTests.js
+
+  screenshot-circuit:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 18.x
     - run: |
         npm install
         npm run build
         node PuppeteerScreenshotCircuit.js
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4
       with:
         name: screenshot
         path: screenshot.png
