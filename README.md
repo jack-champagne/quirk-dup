@@ -1,8 +1,7 @@
-# <a href="http://algassert.com/quirk">Quirk <img src="doc/favicon.ico" alt="Icon" title="Icon" /></a>
+# <a href="http://algassert.com/quirk">Quirk-Dup <img src="doc/favicon.ico" alt="Icon" title="Icon" /></a>
 
-[![Build Status](https://travis-ci.org/Strilanc/Quirk.svg?branch=master)](https://travis-ci.org/Strilanc/Quirk)
 
-Quirk is a toy quantum circuit simulator, intended to help people in learning about quantum computing.
+Quirk-Dup is a toy quantum circuit simulator, intended to help people in learning about quantum computing. It is a fork of **[Quirk](https://github.com/Strilanc/Quirk)**
 
 If you want to quickly explore the behavior of a small quantum circuit, Quirk is the tool for you.
 There's no installing or configuring or scripting: just go to **[algassert.com/quirk](http://algassert.com/quirk)**, drag gates onto the circuit, and the output displays will update in real time.
