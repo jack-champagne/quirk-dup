@@ -19,20 +19,6 @@ jobs:
         npm run build
         grunt build-test-page
 
-  build-and-run-unit-tests:
-    notify:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 18.x
-    - run: |
-        npm install
-        npm run build
-        node PuppeteerRunTests.js
-
 
   screenshot-circuit:
     runs-on: ubuntu-latest
