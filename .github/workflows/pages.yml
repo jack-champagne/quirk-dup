@@ -23,6 +23,7 @@ jobs:
         run: |
           npm install
           npm run build
+          mv out/quirk.html out/index.html
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
