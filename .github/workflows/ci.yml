@@ -2,9 +2,11 @@ name: ci
 
 on:
   push:
-    branch: main
+    branches:
+      - main
   pull_request:
-    branch: main
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -20,6 +22,17 @@ jobs:
         npm run build
         grunt build-test-page
 
+  build-and-run-unit-tests:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: npm install
+    - run: grunt build-test-page
+    - run: node PuppeteerRunTests.js
 
   screenshot-circuit:
     runs-on: ubuntu-latest
